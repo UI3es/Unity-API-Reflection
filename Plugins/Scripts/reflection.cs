@@ -54,7 +54,7 @@ public class QuasarApiExporter : MonoBehaviour
         }
 
         // Создаем путь и сохраняем
-        string dir = Path.Combine(Application.dataPath, "Plugins/Quasar/Api/_api/");
+        string dir = Path.Combine(Application.dataPath, "Plugins/_api/");
         if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
         
         string path = Path.Combine(dir, "reflection.txt");
