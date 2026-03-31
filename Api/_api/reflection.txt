@@ -1,0 +1,1073 @@
+=== CLASS: UnityEngine.ComputeShader ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop LocalKeywordSpace keywordSpace
+prop String[] shaderKeywords
+prop LocalKeyword[] enabledKeywords
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function FindKernel(String name) -> returns Int32
+function HasKernel(String name) -> returns Boolean
+function SetFloat(Int32 nameID, Single val) -> returns Void
+function SetInt(Int32 nameID, Int32 val) -> returns Void
+function SetVector(Int32 nameID, Vector4 val) -> returns Void
+function SetMatrix(Int32 nameID, Matrix4x4 val) -> returns Void
+function SetVectorArray(Int32 nameID, Vector4[] values) -> returns Void
+function SetMatrixArray(Int32 nameID, Matrix4x4[] values) -> returns Void
+function SetTexture(Int32 kernelIndex, Int32 nameID, Texture texture, Int32 mipLevel) -> returns Void
+function SetTextureFromGlobal(Int32 kernelIndex, Int32 nameID, Int32 globalTextureNameID) -> returns Void
+function SetRayTracingAccelerationStructure(Int32 kernelIndex, Int32 nameID, RayTracingAccelerationStructure accelerationStructure) -> returns Void
+function SetBuffer(Int32 kernelIndex, Int32 nameID, ComputeBuffer buffer) -> returns Void
+function SetBuffer(Int32 kernelIndex, Int32 nameID, GraphicsBuffer buffer) -> returns Void
+function GetKernelThreadGroupSizes(Int32 kernelIndex, UInt32& x, UInt32& y, UInt32& z) -> returns Void
+function Dispatch(Int32 kernelIndex, Int32 threadGroupsX, Int32 threadGroupsY, Int32 threadGroupsZ) -> returns Void
+function EnableKeyword(String keyword) -> returns Void
+function DisableKeyword(String keyword) -> returns Void
+function IsKeywordEnabled(String keyword) -> returns Boolean
+function EnableKeyword(LocalKeyword& keyword) -> returns Void
+function DisableKeyword(LocalKeyword& keyword) -> returns Void
+function SetKeyword(LocalKeyword& keyword, Boolean value) -> returns Void
+function IsKeywordEnabled(LocalKeyword& keyword) -> returns Boolean
+function IsSupported(Int32 kernelIndex) -> returns Boolean
+function SetFloat(String name, Single val) -> returns Void
+function SetInt(String name, Int32 val) -> returns Void
+function SetVector(String name, Vector4 val) -> returns Void
+function SetMatrix(String name, Matrix4x4 val) -> returns Void
+function SetVectorArray(String name, Vector4[] values) -> returns Void
+function SetMatrixArray(String name, Matrix4x4[] values) -> returns Void
+function SetFloats(String name, Single[] values) -> returns Void
+function SetFloats(Int32 nameID, Single[] values) -> returns Void
+function SetInts(String name, Int32[] values) -> returns Void
+function SetInts(Int32 nameID, Int32[] values) -> returns Void
+function SetBool(String name, Boolean val) -> returns Void
+function SetBool(Int32 nameID, Boolean val) -> returns Void
+function SetTexture(Int32 kernelIndex, Int32 nameID, Texture texture) -> returns Void
+function SetTexture(Int32 kernelIndex, String name, Texture texture) -> returns Void
+function SetTexture(Int32 kernelIndex, String name, Texture texture, Int32 mipLevel) -> returns Void
+function SetTexture(Int32 kernelIndex, Int32 nameID, RenderTexture texture, Int32 mipLevel, RenderTextureSubElement element) -> returns Void
+function SetTexture(Int32 kernelIndex, String name, RenderTexture texture, Int32 mipLevel, RenderTextureSubElement element) -> returns Void
+function SetTextureFromGlobal(Int32 kernelIndex, String name, String globalTextureName) -> returns Void
+function SetBuffer(Int32 kernelIndex, String name, ComputeBuffer buffer) -> returns Void
+function SetBuffer(Int32 kernelIndex, String name, GraphicsBuffer buffer) -> returns Void
+function SetRayTracingAccelerationStructure(Int32 kernelIndex, String name, RayTracingAccelerationStructure accelerationStructure) -> returns Void
+function SetConstantBuffer(Int32 nameID, ComputeBuffer buffer, Int32 offset, Int32 size) -> returns Void
+function SetConstantBuffer(String name, ComputeBuffer buffer, Int32 offset, Int32 size) -> returns Void
+function SetConstantBuffer(Int32 nameID, GraphicsBuffer buffer, Int32 offset, Int32 size) -> returns Void
+function SetConstantBuffer(String name, GraphicsBuffer buffer, Int32 offset, Int32 size) -> returns Void
+function DispatchIndirect(Int32 kernelIndex, ComputeBuffer argsBuffer, UInt32 argsOffset) -> returns Void
+function DispatchIndirect(Int32 kernelIndex, ComputeBuffer argsBuffer) -> returns Void
+function DispatchIndirect(Int32 kernelIndex, GraphicsBuffer argsBuffer, UInt32 argsOffset) -> returns Void
+function DispatchIndirect(Int32 kernelIndex, GraphicsBuffer argsBuffer) -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.ComputeBuffer ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop Int32 count
+prop Int32 stride
+prop String name
+
+-- METHODS --
+function Dispose() -> returns Void
+function Release() -> returns Void
+function IsValid() -> returns Boolean
+function SetData(Array data) -> returns Void
+function SetData(List`1 data) -> returns Void
+function SetData(NativeArray`1 data) -> returns Void
+function SetData(Array data, Int32 managedBufferStartIndex, Int32 computeBufferStartIndex, Int32 count) -> returns Void
+function SetData(List`1 data, Int32 managedBufferStartIndex, Int32 computeBufferStartIndex, Int32 count) -> returns Void
+function SetData(NativeArray`1 data, Int32 nativeBufferStartIndex, Int32 computeBufferStartIndex, Int32 count) -> returns Void
+function GetData(Array data) -> returns Void
+function GetData(Array data, Int32 managedBufferStartIndex, Int32 computeBufferStartIndex, Int32 count) -> returns Void
+function BeginWrite(Int32 computeBufferStartIndex, Int32 count) -> returns NativeArray`1
+function EndWrite(Int32 countWritten) -> returns Void
+function SetCounterValue(UInt32 counterValue) -> returns Void
+function CopyCount(ComputeBuffer src, ComputeBuffer dst, Int32 dstOffsetBytes) -> returns Void
+function GetNativeBufferPtr() -> returns IntPtr
+function Equals(Object obj) -> returns Boolean
+function GetHashCode() -> returns Int32
+function GetType() -> returns Type
+function ToString() -> returns String
+
+==================================================
+
+=== CLASS: UnityEngine.RenderTexture ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop Int32 width
+prop Int32 height
+prop TextureDimension dimension
+prop GraphicsFormat graphicsFormat
+prop Boolean useMipMap
+prop Boolean sRGB
+prop VRTextureUsage vrUsage
+prop RenderTextureMemoryless memorylessMode
+prop RenderTextureFormat format
+prop GraphicsFormat stencilFormat
+prop GraphicsFormat depthStencilFormat
+prop Boolean autoGenerateMips
+prop Int32 volumeDepth
+prop Int32 antiAliasing
+prop Boolean bindTextureMS
+prop Boolean enableRandomWrite
+prop Boolean useDynamicScale
+prop Boolean useDynamicScaleExplicit
+prop Boolean enableShadingRate
+prop Boolean isPowerOfTwo
+prop RenderTexture active
+prop RenderBuffer colorBuffer
+prop RenderBuffer depthBuffer
+prop Int32 depth
+prop RenderTextureDescriptor descriptor
+prop Boolean generateMips
+prop Boolean isCubemap
+prop Boolean isVolume
+prop Boolean enabled
+prop Int32 mipmapCount
+prop Boolean isReadable
+prop TextureWrapMode wrapMode
+prop TextureWrapMode wrapModeU
+prop TextureWrapMode wrapModeV
+prop TextureWrapMode wrapModeW
+prop FilterMode filterMode
+prop Int32 anisoLevel
+prop Single mipMapBias
+prop Vector2 texelSize
+prop UInt32 updateCount
+prop Boolean isDataSRGB
+prop Hash128 imageContentsHash
+prop GraphicsTexture graphicsTexture
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function ApplyDynamicScale() -> returns Void
+function GetNativeDepthBufferPtr() -> returns IntPtr
+function DiscardContents(Boolean discardColor, Boolean discardDepth) -> returns Void
+function MarkRestoreExpected() -> returns Void
+function DiscardContents() -> returns Void
+function ResolveAntiAliasedSurface() -> returns Void
+function ResolveAntiAliasedSurface(RenderTexture target) -> returns Void
+function SetGlobalShaderProperty(String propertyName) -> returns Void
+function Create() -> returns Boolean
+function Release() -> returns Void
+function IsCreated() -> returns Boolean
+function GenerateMips() -> returns Void
+function ConvertToEquirect(RenderTexture equirect, MonoOrStereoscopicEye eye) -> returns Void
+function SupportsStencil(RenderTexture rt) -> returns Boolean
+function ReleaseTemporary(RenderTexture temp) -> returns Void
+function GetTemporary(RenderTextureDescriptor desc) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, GraphicsFormat format, Int32 antiAliasing, RenderTextureMemoryless memorylessMode, VRTextureUsage vrUsage, Boolean useDynamicScale) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, GraphicsFormat format, Int32 antiAliasing, RenderTextureMemoryless memorylessMode, VRTextureUsage vrUsage) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, GraphicsFormat format, Int32 antiAliasing, RenderTextureMemoryless memorylessMode) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, GraphicsFormat format, Int32 antiAliasing) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, GraphicsFormat format) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format, RenderTextureReadWrite readWrite, Int32 antiAliasing, RenderTextureMemoryless memorylessMode, VRTextureUsage vrUsage, Boolean useDynamicScale) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format, RenderTextureReadWrite readWrite, Int32 antiAliasing, RenderTextureMemoryless memorylessMode, VRTextureUsage vrUsage) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format, RenderTextureReadWrite readWrite, Int32 antiAliasing, RenderTextureMemoryless memorylessMode) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format, RenderTextureReadWrite readWrite, Int32 antiAliasing) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format, RenderTextureReadWrite readWrite) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer, RenderTextureFormat format) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height, Int32 depthBuffer) -> returns RenderTexture
+function GetTemporary(Int32 width, Int32 height) -> returns RenderTexture
+function SetBorderColor(Color color) -> returns Void
+function GetTexelOffset() -> returns Vector2
+function GetNativeTexturePtr() -> returns IntPtr
+function GetNativeTextureID() -> returns Int32
+function IncrementUpdateCount() -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.TerrainData ===
+Module: UnityEngine.TerrainModule
+-- PROPERTIES --
+prop Int32 heightmapWidth
+prop Int32 heightmapHeight
+prop RenderTexture heightmapTexture
+prop Int32 heightmapResolution
+prop Vector3 heightmapScale
+prop Texture holesTexture
+prop Boolean enableHolesTextureCompression
+prop Int32 holesResolution
+prop Vector3 size
+prop Bounds bounds
+prop Single thickness
+prop Single wavingGrassStrength
+prop Single wavingGrassAmount
+prop Single wavingGrassSpeed
+prop Color wavingGrassTint
+prop Int32 detailWidth
+prop Int32 detailHeight
+prop Int32 maxDetailScatterPerRes
+prop Int32 detailPatchCount
+prop Int32 detailResolution
+prop Int32 detailResolutionPerPatch
+prop DetailScatterMode detailScatterMode
+prop DetailPrototype[] detailPrototypes
+prop TreeInstance[] treeInstances
+prop Int32 treeInstanceCount
+prop TreePrototype[] treePrototypes
+prop Int32 alphamapLayers
+prop Int32 alphamapResolution
+prop Int32 alphamapWidth
+prop Int32 alphamapHeight
+prop Int32 baseMapResolution
+prop Int32 alphamapTextureCount
+prop Texture2D[] alphamapTextures
+prop SplatPrototype[] splatPrototypes
+prop TerrainLayer[] terrainLayers
+prop String AlphamapTextureName
+prop String HolesTextureName
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function UpdateDirtyRegion(Int32 x, Int32 y, Int32 width, Int32 height, Boolean syncHeightmapTextureImmediately) -> returns Void
+function GetHeight(Int32 x, Int32 y) -> returns Single
+function GetInterpolatedHeight(Single x, Single y) -> returns Single
+function GetInterpolatedHeights(Single xBase, Single yBase, Int32 xCount, Int32 yCount, Single xInterval, Single yInterval) -> returns Single[,]
+function GetInterpolatedHeights(Single[,] results, Int32 resultXOffset, Int32 resultYOffset, Single xBase, Single yBase, Int32 xCount, Int32 yCount, Single xInterval, Single yInterval) -> returns Void
+function GetHeights(Int32 xBase, Int32 yBase, Int32 width, Int32 height) -> returns Single[,]
+function SetHeights(Int32 xBase, Int32 yBase, Single[,] heights) -> returns Void
+function GetPatchMinMaxHeights() -> returns PatchExtents[]
+function OverrideMinMaxPatchHeights(PatchExtents[] minMaxHeights) -> returns Void
+function GetMaximumHeightError() -> returns Single[]
+function OverrideMaximumHeightError(Single[] maxError) -> returns Void
+function SetHeightsDelayLOD(Int32 xBase, Int32 yBase, Single[,] heights) -> returns Void
+function IsHole(Int32 x, Int32 y) -> returns Boolean
+function GetHoles(Int32 xBase, Int32 yBase, Int32 width, Int32 height) -> returns Boolean[,]
+function SetHoles(Int32 xBase, Int32 yBase, Boolean[,] holes) -> returns Void
+function SetHolesDelayLOD(Int32 xBase, Int32 yBase, Boolean[,] holes) -> returns Void
+function GetSteepness(Single x, Single y) -> returns Single
+function GetInterpolatedNormal(Single x, Single y) -> returns Vector3
+function SetDetailResolution(Int32 detailResolution, Int32 resolutionPerPatch) -> returns Void
+function SetDetailScatterMode(DetailScatterMode scatterMode) -> returns Void
+function RefreshPrototypes() -> returns Void
+function GetSupportedLayers(Int32 xBase, Int32 yBase, Int32 totalWidth, Int32 totalHeight) -> returns Int32[]
+function GetSupportedLayers(Vector2Int positionBase, Vector2Int size) -> returns Int32[]
+function GetDetailLayer(Int32 xBase, Int32 yBase, Int32 width, Int32 height, Int32 layer) -> returns Int32[,]
+function GetDetailLayer(Vector2Int positionBase, Vector2Int size, Int32 layer) -> returns Int32[,]
+function ComputeDetailInstanceTransforms(Int32 patchX, Int32 patchY, Int32 layer, Single density, Bounds& bounds) -> returns DetailInstanceTransform[]
+function ComputeDetailCoverage(Int32 detailPrototypeIndex) -> returns Single
+function SetDetailLayer(Int32 xBase, Int32 yBase, Int32 layer, Int32[,] details) -> returns Void
+function SetDetailLayer(Vector2Int basePosition, Int32 layer, Int32[,] details) -> returns Void
+function GetClampedDetailPatches(Single density) -> returns Vector2Int[]
+function SetTreeInstances(TreeInstance[] instances, Boolean snapToHeightmap) -> returns Void
+function GetTreeInstance(Int32 index) -> returns TreeInstance
+function SetTreeInstance(Int32 index, TreeInstance instance) -> returns Void
+function RemoveDetailPrototype(Int32 index) -> returns Void
+function GetAlphamaps(Int32 x, Int32 y, Int32 width, Int32 height) -> returns Single[,,]
+function SetAlphamaps(Int32 x, Int32 y, Single[,,] map) -> returns Void
+function SetBaseMapDirty() -> returns Void
+function GetAlphamapTexture(Int32 index) -> returns Texture2D
+function SetTerrainLayersRegisterUndo(TerrainLayer[] terrainLayers, String undoName) -> returns Void
+function SyncHeightmap() -> returns Void
+function CopyActiveRenderTextureToHeightmap(RectInt sourceRect, Vector2Int dest, TerrainHeightmapSyncControl syncControl) -> returns Void
+function DirtyHeightmapRegion(RectInt region, TerrainHeightmapSyncControl syncControl) -> returns Void
+function CopyActiveRenderTextureToTexture(String textureName, Int32 textureIndex, RectInt sourceRect, Vector2Int dest, Boolean allowDelayedCPUSync) -> returns Void
+function DirtyTextureRegion(String textureName, RectInt region, Boolean allowDelayedCPUSync) -> returns Void
+function SyncTexture(String textureName) -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.Terrain ===
+Module: UnityEngine.TerrainModule
+-- PROPERTIES --
+prop TerrainData terrainData
+prop Single treeDistance
+prop Single treeBillboardDistance
+prop Single treeCrossFadeLength
+prop Int32 treeMaximumFullLODCount
+prop Single detailObjectDistance
+prop Single detailObjectDensity
+prop Single heightmapPixelError
+prop Int32 heightmapMaximumLOD
+prop Int32 heightmapMinimumLODSimplification
+prop Single basemapDistance
+prop Int32 lightmapIndex
+prop Int32 realtimeLightmapIndex
+prop Vector4 lightmapScaleOffset
+prop Vector4 realtimeLightmapScaleOffset
+prop Boolean freeUnusedRenderingResources
+prop Boolean keepUnusedRenderingResources
+prop ShadowCastingMode shadowCastingMode
+prop ReflectionProbeUsage reflectionProbeUsage
+prop Material materialTemplate
+prop Boolean drawHeightmap
+prop Boolean allowAutoConnect
+prop Int32 groupingID
+prop Boolean drawInstanced
+prop Boolean enableHeightmapRayTracing
+prop RenderTexture normalmapTexture
+prop Boolean drawTreesAndFoliage
+prop Vector3 patchBoundsMultiplier
+prop Single treeLODBiasMultiplier
+prop Boolean collectDetailPatches
+prop Boolean ignoreQualitySettings
+prop TerrainRenderFlags editorRenderFlags
+prop Boolean bakeLightProbesForTrees
+prop Boolean deringLightProbesForTrees
+prop TreeMotionVectorModeOverride treeMotionVectorModeOverride
+prop Boolean preserveTreePrototypeLayers
+prop GraphicsFormat heightmapFormat
+prop TextureFormat heightmapTextureFormat
+prop RenderTextureFormat heightmapRenderTextureFormat
+prop GraphicsFormat normalmapFormat
+prop TextureFormat normalmapTextureFormat
+prop RenderTextureFormat normalmapRenderTextureFormat
+prop GraphicsFormat holesFormat
+prop RenderTextureFormat holesRenderTextureFormat
+prop GraphicsFormat compressedHolesFormat
+prop TextureFormat compressedHolesTextureFormat
+prop Terrain activeTerrain
+prop Terrain[] activeTerrains
+prop Terrain leftNeighbor
+prop Terrain rightNeighbor
+prop Terrain topNeighbor
+prop Terrain bottomNeighbor
+prop UInt32 renderingLayerMask
+prop Single splatmapDistance
+prop Boolean castShadows
+prop MaterialType materialType
+prop Color legacySpecular
+prop Single legacyShininess
+prop Boolean enabled
+prop Boolean isActiveAndEnabled
+prop Transform transform
+prop TransformHandle transformHandle
+prop GameObject gameObject
+prop String tag
+prop Component rigidbody
+prop Component rigidbody2D
+prop Component camera
+prop Component light
+prop Component animation
+prop Component constantForce
+prop Component renderer
+prop Component audio
+prop Component networkView
+prop Component collider
+prop Component collider2D
+prop Component hingeJoint
+prop Component particleSystem
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function GetKeepUnusedCameraRenderingResources(EntityId cameraEntityId) -> returns Boolean
+function SetKeepUnusedCameraRenderingResources(EntityId cameraEntityId, Boolean keepUnused) -> returns Void
+function GetKeepUnusedCameraRenderingResources(Int32 cameraInstanceID) -> returns Boolean
+function SetKeepUnusedCameraRenderingResources(Int32 cameraInstanceID, Boolean keepUnused) -> returns Void
+function GetClosestReflectionProbes(List`1 result) -> returns Void
+function SampleHeight(Vector3 worldPosition) -> returns Single
+function AddTreeInstance(TreeInstance instance) -> returns Void
+function SetNeighbors(Terrain left, Terrain top, Terrain right, Terrain bottom) -> returns Void
+function GetPosition() -> returns Vector3
+function Flush() -> returns Void
+function SetSplatMaterialPropertyBlock(MaterialPropertyBlock properties) -> returns Void
+function GetSplatMaterialPropertyBlock(MaterialPropertyBlock dest) -> returns Void
+function SetConnectivityDirty() -> returns Void
+function GetActiveTerrains(List`1 terrainList) -> returns Void
+function CreateTerrainGameObject(TerrainData assignTerrain) -> returns GameObject
+function ApplyDelayedHeightmapModification() -> returns Void
+function GetComponent(Type type) -> returns Component
+function GetComponent() -> returns T
+function TryGetComponent(Type type, Component& component) -> returns Boolean
+function TryGetComponent(T& component) -> returns Boolean
+function GetComponent(String type) -> returns Component
+function GetComponentInChildren(Type t, Boolean includeInactive) -> returns Component
+function GetComponentInChildren(Type t) -> returns Component
+function GetComponentInChildren(Boolean includeInactive) -> returns T
+function GetComponentInChildren() -> returns T
+function GetComponentsInChildren(Type t, Boolean includeInactive) -> returns Component[]
+function GetComponentsInChildren(Type t) -> returns Component[]
+function GetComponentsInChildren(Boolean includeInactive) -> returns T[]
+function GetComponentsInChildren(Boolean includeInactive, List`1 result) -> returns Void
+function GetComponentsInChildren() -> returns T[]
+function GetComponentsInChildren(List`1 results) -> returns Void
+function GetComponentInParent(Type t, Boolean includeInactive) -> returns Component
+function GetComponentInParent(Type t) -> returns Component
+function GetComponentInParent(Boolean includeInactive) -> returns T
+function GetComponentInParent() -> returns T
+function GetComponentsInParent(Type t, Boolean includeInactive) -> returns Component[]
+function GetComponentsInParent(Type t) -> returns Component[]
+function GetComponentsInParent(Boolean includeInactive) -> returns T[]
+function GetComponentsInParent(Boolean includeInactive, List`1 results) -> returns Void
+function GetComponentsInParent() -> returns T[]
+function GetComponents(Type type) -> returns Component[]
+function GetComponents(Type type, List`1 results) -> returns Void
+function GetComponents(List`1 results) -> returns Void
+function GetComponents() -> returns T[]
+function GetComponentIndex() -> returns Int32
+function CompareTag(String tag) -> returns Boolean
+function CompareTag(TagHandle tag) -> returns Boolean
+function SendMessageUpwards(String methodName, Object value, SendMessageOptions options) -> returns Void
+function SendMessageUpwards(String methodName, Object value) -> returns Void
+function SendMessageUpwards(String methodName) -> returns Void
+function SendMessageUpwards(String methodName, SendMessageOptions options) -> returns Void
+function SendMessage(String methodName, Object value) -> returns Void
+function SendMessage(String methodName) -> returns Void
+function SendMessage(String methodName, Object value, SendMessageOptions options) -> returns Void
+function SendMessage(String methodName, SendMessageOptions options) -> returns Void
+function BroadcastMessage(String methodName, Object parameter, SendMessageOptions options) -> returns Void
+function BroadcastMessage(String methodName, Object parameter) -> returns Void
+function BroadcastMessage(String methodName) -> returns Void
+function BroadcastMessage(String methodName, SendMessageOptions options) -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.Texture2D ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop TextureFormat format
+prop String mipmapLimitGroup
+prop Int32 activeMipmapLimit
+prop Texture2D whiteTexture
+prop Texture2D blackTexture
+prop Texture2D redTexture
+prop Texture2D grayTexture
+prop Texture2D linearGrayTexture
+prop Texture2D normalTexture
+prop Boolean isReadable
+prop Boolean vtOnly
+prop Boolean streamingMipmaps
+prop Int32 streamingMipmapsPriority
+prop Int32 requestedMipmapLevel
+prop Int32 minimumMipmapLevel
+prop Int32 calculatedMipmapLevel
+prop Int32 desiredMipmapLevel
+prop Int32 loadingMipmapLevel
+prop Int32 loadedMipmapLevel
+prop Boolean alphaIsTransparency
+prop Boolean ignoreMipmapLimit
+prop Int32 mipmapCount
+prop GraphicsFormat graphicsFormat
+prop Int32 width
+prop Int32 height
+prop TextureDimension dimension
+prop TextureWrapMode wrapMode
+prop TextureWrapMode wrapModeU
+prop TextureWrapMode wrapModeV
+prop TextureWrapMode wrapModeW
+prop FilterMode filterMode
+prop Int32 anisoLevel
+prop Single mipMapBias
+prop Vector2 texelSize
+prop UInt32 updateCount
+prop Boolean isDataSRGB
+prop Hash128 imageContentsHash
+prop GraphicsTexture graphicsTexture
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function Compress(Boolean highQuality) -> returns Void
+function ClearRequestedMipmapLevel() -> returns Void
+function IsRequestedMipmapLevelLoaded() -> returns Boolean
+function ClearMinimumMipmapLevel() -> returns Void
+function UpdateExternalTexture(IntPtr nativeTex) -> returns Void
+function GetRawTextureData() -> returns Byte[]
+function GetPixels(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight, Int32 miplevel) -> returns Color[]
+function GetPixels(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight) -> returns Color[]
+function GetPixels32(Int32 miplevel) -> returns Color32[]
+function GetPixels32() -> returns Color32[]
+function PackTextures(Texture2D[] textures, Int32 padding, Int32 maximumAtlasSize, Boolean makeNoLongerReadable) -> returns Rect[]
+function PackTextures(Texture2D[] textures, Int32 padding, Int32 maximumAtlasSize) -> returns Rect[]
+function PackTextures(Texture2D[] textures, Int32 padding) -> returns Rect[]
+function CreateExternalTexture(Int32 width, Int32 height, TextureFormat format, Boolean mipChain, Boolean linear, IntPtr nativeTex) -> returns Texture2D
+function SetPixel(Int32 x, Int32 y, Color color) -> returns Void
+function SetPixel(Int32 x, Int32 y, Color color, Int32 mipLevel) -> returns Void
+function SetPixels(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight, Color[] colors, Int32 miplevel) -> returns Void
+function SetPixels(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight, Color[] colors) -> returns Void
+function SetPixels(Color[] colors, Int32 miplevel) -> returns Void
+function SetPixels(Color[] colors) -> returns Void
+function GetPixel(Int32 x, Int32 y) -> returns Color
+function GetPixel(Int32 x, Int32 y, Int32 mipLevel) -> returns Color
+function GetPixelBilinear(Single u, Single v) -> returns Color
+function GetPixelBilinear(Single u, Single v, Int32 mipLevel) -> returns Color
+function LoadRawTextureData(IntPtr data, Int32 size) -> returns Void
+function LoadRawTextureData(Byte[] data) -> returns Void
+function LoadRawTextureData(NativeArray`1 data) -> returns Void
+function SetPixelData(T[] data, Int32 mipLevel, Int32 sourceDataStartIndex) -> returns Void
+function SetPixelData(NativeArray`1 data, Int32 mipLevel, Int32 sourceDataStartIndex) -> returns Void
+function GetPixelData(Int32 mipLevel) -> returns NativeArray`1
+function GetRawTextureData() -> returns NativeArray`1
+function Apply(Boolean updateMipmaps, Boolean makeNoLongerReadable) -> returns Void
+function Apply(Boolean updateMipmaps) -> returns Void
+function Apply() -> returns Void
+function Reinitialize(Int32 width, Int32 height) -> returns Boolean
+function Reinitialize(Int32 width, Int32 height, TextureFormat format, Boolean hasMipMap) -> returns Boolean
+function Reinitialize(Int32 width, Int32 height, GraphicsFormat format, Boolean hasMipMap) -> returns Boolean
+function Resize(Int32 width, Int32 height) -> returns Boolean
+function Resize(Int32 width, Int32 height, TextureFormat format, Boolean hasMipMap) -> returns Boolean
+function Resize(Int32 width, Int32 height, GraphicsFormat format, Boolean hasMipMap) -> returns Boolean
+function ReadPixels(Rect source, Int32 destX, Int32 destY, Boolean recalculateMipMaps) -> returns Void
+function ReadPixels(Rect source, Int32 destX, Int32 destY) -> returns Void
+function GenerateAtlas(Vector2[] sizes, Int32 padding, Int32 atlasSize, List`1 results) -> returns Boolean
+function SetPixels32(Color32[] colors, Int32 miplevel) -> returns Void
+function SetPixels32(Color32[] colors) -> returns Void
+function SetPixels32(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight, Color32[] colors, Int32 miplevel) -> returns Void
+function SetPixels32(Int32 x, Int32 y, Int32 blockWidth, Int32 blockHeight, Color32[] colors) -> returns Void
+function GetPixels(Int32 miplevel) -> returns Color[]
+function GetPixels() -> returns Color[]
+function CopyPixels(Texture src) -> returns Void
+function CopyPixels(Texture src, Int32 srcElement, Int32 srcMip, Int32 dstMip) -> returns Void
+function CopyPixels(Texture src, Int32 srcElement, Int32 srcMip, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, Int32 dstMip, Int32 dstX, Int32 dstY) -> returns Void
+function GetNativeTexturePtr() -> returns IntPtr
+function GetNativeTextureID() -> returns Int32
+function IncrementUpdateCount() -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.Mathf ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+
+-- METHODS --
+function GammaToLinearSpace(Single value) -> returns Single
+function LinearToGammaSpace(Single value) -> returns Single
+function CorrelatedColorTemperatureToRGB(Single kelvin) -> returns Color
+function FloatToHalf(Single val) -> returns UInt16
+function HalfToFloat(UInt16 val) -> returns Single
+function PerlinNoise(Single x, Single y) -> returns Single
+function PerlinNoise1D(Single x) -> returns Single
+function Sin(Single f) -> returns Single
+function Cos(Single f) -> returns Single
+function Tan(Single f) -> returns Single
+function Asin(Single f) -> returns Single
+function Acos(Single f) -> returns Single
+function Atan(Single f) -> returns Single
+function Atan2(Single y, Single x) -> returns Single
+function Sqrt(Single f) -> returns Single
+function Abs(Single f) -> returns Single
+function Abs(Int32 value) -> returns Int32
+function Min(Single a, Single b) -> returns Single
+function Min(Single[] values) -> returns Single
+function Min(Int32 a, Int32 b) -> returns Int32
+function Min(Int32[] values) -> returns Int32
+function Max(Single a, Single b) -> returns Single
+function Max(Single[] values) -> returns Single
+function Max(Int32 a, Int32 b) -> returns Int32
+function Max(Int32[] values) -> returns Int32
+function Pow(Single f, Single p) -> returns Single
+function Exp(Single power) -> returns Single
+function Log(Single f, Single p) -> returns Single
+function Log(Single f) -> returns Single
+function Log10(Single f) -> returns Single
+function Ceil(Single f) -> returns Single
+function Floor(Single f) -> returns Single
+function Round(Single f) -> returns Single
+function CeilToInt(Single f) -> returns Int32
+function FloorToInt(Single f) -> returns Int32
+function RoundToInt(Single f) -> returns Int32
+function Sign(Single f) -> returns Single
+function Clamp(Single value, Single min, Single max) -> returns Single
+function Clamp(Int32 value, Int32 min, Int32 max) -> returns Int32
+function Clamp01(Single value) -> returns Single
+function Lerp(Single a, Single b, Single t) -> returns Single
+function LerpUnclamped(Single a, Single b, Single t) -> returns Single
+function LerpAngle(Single a, Single b, Single t) -> returns Single
+function MoveTowards(Single current, Single target, Single maxDelta) -> returns Single
+function MoveTowardsAngle(Single current, Single target, Single maxDelta) -> returns Single
+function SmoothStep(Single from, Single to, Single t) -> returns Single
+function Gamma(Single value, Single absmax, Single gamma) -> returns Single
+function Approximately(Single a, Single b) -> returns Boolean
+function SmoothDamp(Single current, Single target, Single& currentVelocity, Single smoothTime, Single maxSpeed) -> returns Single
+function SmoothDamp(Single current, Single target, Single& currentVelocity, Single smoothTime) -> returns Single
+function SmoothDamp(Single current, Single target, Single& currentVelocity, Single smoothTime, Single maxSpeed, Single deltaTime) -> returns Single
+function SmoothDampAngle(Single current, Single target, Single& currentVelocity, Single smoothTime, Single maxSpeed) -> returns Single
+function SmoothDampAngle(Single current, Single target, Single& currentVelocity, Single smoothTime) -> returns Single
+function SmoothDampAngle(Single current, Single target, Single& currentVelocity, Single smoothTime, Single maxSpeed, Single deltaTime) -> returns Single
+function Repeat(Single t, Single length) -> returns Single
+function PingPong(Single t, Single length) -> returns Single
+function InverseLerp(Single a, Single b, Single value) -> returns Single
+function DeltaAngle(Single current, Single target) -> returns Single
+function NextPowerOfTwo(Int32 value) -> returns Int32
+function ClosestPowerOfTwo(Int32 value) -> returns Int32
+function IsPowerOfTwo(Int32 value) -> returns Boolean
+function Equals(Object obj) -> returns Boolean
+function GetHashCode() -> returns Int32
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.Mesh ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop Vector2[] uv1
+prop IndexFormat indexFormat
+prop Int32 vertexBufferCount
+prop Target vertexBufferTarget
+prop Target indexBufferTarget
+prop Int32 blendShapeCount
+prop Int32 bindposeCount
+prop Matrix4x4[] bindposes
+prop Boolean isReadable
+prop Int32 vertexCount
+prop Int32 subMeshCount
+prop Bounds bounds
+prop Vector3[] vertices
+prop Vector3[] normals
+prop Vector4[] tangents
+prop Vector2[] uv
+prop Vector2[] uv2
+prop Vector2[] uv3
+prop Vector2[] uv4
+prop Vector2[] uv5
+prop Vector2[] uv6
+prop Vector2[] uv7
+prop Vector2[] uv8
+prop Color[] colors
+prop Color32[] colors32
+prop Int32 lodCount
+prop LodSelectionCurve lodSelectionCurve
+prop Int32 vertexAttributeCount
+prop Int32[] triangles
+prop BoneWeight[] boneWeights
+prop SkinWeights skinWeightBufferLayout
+prop String name
+prop HideFlags hideFlags
+
+-- METHODS --
+function SetIndexBufferParams(Int32 indexCount, IndexFormat format) -> returns Void
+function GetVertexAttribute(Int32 index) -> returns VertexAttributeDescriptor
+function HasVertexAttribute(VertexAttribute attr) -> returns Boolean
+function GetVertexAttributeDimension(VertexAttribute attr) -> returns Int32
+function GetVertexAttributeFormat(VertexAttribute attr) -> returns VertexAttributeFormat
+function GetVertexAttributeStream(VertexAttribute attr) -> returns Int32
+function GetVertexAttributeOffset(VertexAttribute attr) -> returns Int32
+function GetVertexBufferStride(Int32 stream) -> returns Int32
+function GetNativeVertexBufferPtr(Int32 index) -> returns IntPtr
+function GetNativeIndexBufferPtr() -> returns IntPtr
+function ClearBlendShapes() -> returns Void
+function GetBlendShapeName(Int32 shapeIndex) -> returns String
+function GetBlendShapeIndex(String blendShapeName) -> returns Int32
+function GetBlendShapeFrameCount(Int32 shapeIndex) -> returns Int32
+function GetBlendShapeFrameWeight(Int32 shapeIndex, Int32 frameIndex) -> returns Single
+function GetBlendShapeFrameVertices(Int32 shapeIndex, Int32 frameIndex, Vector3[] deltaVertices, Vector3[] deltaNormals, Vector3[] deltaTangents) -> returns Void
+function AddBlendShapeFrame(String shapeName, Single frameWeight, ReadOnlySpan`1 deltaVertices, ReadOnlySpan`1 deltaNormals, ReadOnlySpan`1 deltaTangents) -> returns Void
+function AddBlendShapeFrame(String shapeName, Single frameWeight, Vector3[] deltaVertices, Vector3[] deltaNormals, Vector3[] deltaTangents) -> returns Void
+function SetBoneWeights(NativeArray`1 bonesPerVertex, NativeArray`1 weights) -> returns Void
+function GetAllBoneWeights() -> returns NativeArray`1
+function GetBonesPerVertex() -> returns NativeArray`1
+function GetBindposes() -> returns NativeArray`1
+function SetBindposes(NativeArray`1 poses) -> returns Void
+function SetSubMesh(Int32 index, SubMeshDescriptor desc, MeshUpdateFlags flags) -> returns Void
+function GetSubMesh(Int32 index) -> returns SubMeshDescriptor
+function GetLod(Int32 subMeshIndex, Int32 levelIndex) -> returns MeshLodRange
+function MarkModified() -> returns Void
+function GetUVDistributionMetric(Int32 uvSetIndex) -> returns Single
+function GetVertices(List`1 vertices) -> returns Void
+function SetVertices(List`1 inVertices) -> returns Void
+function SetVertices(List`1 inVertices, Int32 start, Int32 length) -> returns Void
+function SetVertices(List`1 inVertices, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetVertices(Vector3[] inVertices) -> returns Void
+function SetVertices(Vector3[] inVertices, Int32 start, Int32 length) -> returns Void
+function SetVertices(Vector3[] inVertices, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetVertices(NativeArray`1 inVertices) -> returns Void
+function SetVertices(NativeArray`1 inVertices, Int32 start, Int32 length) -> returns Void
+function SetVertices(NativeArray`1 inVertices, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function GetNormals(List`1 normals) -> returns Void
+function SetNormals(List`1 inNormals) -> returns Void
+function SetNormals(List`1 inNormals, Int32 start, Int32 length) -> returns Void
+function SetNormals(List`1 inNormals, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetNormals(Vector3[] inNormals) -> returns Void
+function SetNormals(Vector3[] inNormals, Int32 start, Int32 length) -> returns Void
+function SetNormals(Vector3[] inNormals, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetNormals(NativeArray`1 inNormals) -> returns Void
+function SetNormals(NativeArray`1 inNormals, Int32 start, Int32 length) -> returns Void
+function SetNormals(NativeArray`1 inNormals, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function GetTangents(List`1 tangents) -> returns Void
+function SetTangents(List`1 inTangents) -> returns Void
+function SetTangents(List`1 inTangents, Int32 start, Int32 length) -> returns Void
+function SetTangents(List`1 inTangents, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetTangents(Vector4[] inTangents) -> returns Void
+function SetTangents(Vector4[] inTangents, Int32 start, Int32 length) -> returns Void
+function SetTangents(Vector4[] inTangents, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetTangents(NativeArray`1 inTangents) -> returns Void
+function SetTangents(NativeArray`1 inTangents, Int32 start, Int32 length) -> returns Void
+function SetTangents(NativeArray`1 inTangents, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function GetColors(List`1 colors) -> returns Void
+function SetColors(List`1 inColors) -> returns Void
+function SetColors(List`1 inColors, Int32 start, Int32 length) -> returns Void
+function SetColors(List`1 inColors, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetColors(Color[] inColors) -> returns Void
+function SetColors(Color[] inColors, Int32 start, Int32 length) -> returns Void
+function SetColors(Color[] inColors, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function GetColors(List`1 colors) -> returns Void
+function SetColors(List`1 inColors) -> returns Void
+function SetColors(List`1 inColors, Int32 start, Int32 length) -> returns Void
+function SetColors(List`1 inColors, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetColors(Color32[] inColors) -> returns Void
+function SetColors(Color32[] inColors, Int32 start, Int32 length) -> returns Void
+function SetColors(Color32[] inColors, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetColors(NativeArray`1 inColors) -> returns Void
+function SetColors(NativeArray`1 inColors, Int32 start, Int32 length) -> returns Void
+function SetColors(NativeArray`1 inColors, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, List`1 uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, Vector2[] uvs) -> returns Void
+function SetUVs(Int32 channel, Vector3[] uvs) -> returns Void
+function SetUVs(Int32 channel, Vector4[] uvs) -> returns Void
+function SetUVs(Int32 channel, Vector2[] uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, Vector2[] uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, Vector3[] uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, Vector3[] uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, Vector4[] uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, Vector4[] uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function SetUVs(Int32 channel, NativeArray`1 uvs) -> returns Void
+function SetUVs(Int32 channel, NativeArray`1 uvs, Int32 start, Int32 length) -> returns Void
+function SetUVs(Int32 channel, NativeArray`1 uvs, Int32 start, Int32 length, MeshUpdateFlags flags) -> returns Void
+function GetUVs(Int32 channel, List`1 uvs) -> returns Void
+function GetUVs(Int32 channel, List`1 uvs) -> returns Void
+function GetUVs(Int32 channel, List`1 uvs) -> returns Void
+function GetVertexAttributes() -> returns VertexAttributeDescriptor[]
+function GetVertexAttributes(VertexAttributeDescriptor[] attributes) -> returns Int32
+function GetVertexAttributes(List`1 attributes) -> returns Int32
+function SetVertexBufferParams(Int32 vertexCount, VertexAttributeDescriptor[] attributes) -> returns Void
+function SetVertexBufferParams(Int32 vertexCount, NativeArray`1 attributes) -> returns Void
+function SetVertexBufferData(NativeArray`1 data, Int32 dataStart, Int32 meshBufferStart, Int32 count, Int32 stream, MeshUpdateFlags flags) -> returns Void
+function SetVertexBufferData(T[] data, Int32 dataStart, Int32 meshBufferStart, Int32 count, Int32 stream, MeshUpdateFlags flags) -> returns Void
+function SetVertexBufferData(List`1 data, Int32 dataStart, Int32 meshBufferStart, Int32 count, Int32 stream, MeshUpdateFlags flags) -> returns Void
+function AcquireReadOnlyMeshData(Mesh mesh) -> returns MeshDataArray
+function AcquireReadOnlyMeshData(Mesh[] meshes) -> returns MeshDataArray
+function AcquireReadOnlyMeshData(List`1 meshes) -> returns MeshDataArray
+function AllocateWritableMeshData(Int32 meshCount) -> returns MeshDataArray
+function AllocateWritableMeshData(Mesh mesh) -> returns MeshDataArray
+function AllocateWritableMeshData(Mesh[] meshes) -> returns MeshDataArray
+function AllocateWritableMeshData(List`1 meshes) -> returns MeshDataArray
+function ApplyAndDisposeWritableMeshData(MeshDataArray data, Mesh mesh, MeshUpdateFlags flags) -> returns Void
+function ApplyAndDisposeWritableMeshData(MeshDataArray data, Mesh[] meshes, MeshUpdateFlags flags) -> returns Void
+function ApplyAndDisposeWritableMeshData(MeshDataArray data, List`1 meshes, MeshUpdateFlags flags) -> returns Void
+function GetVertexBuffer(Int32 index) -> returns GraphicsBuffer
+function GetIndexBuffer() -> returns GraphicsBuffer
+function GetBoneWeightBuffer(SkinWeights layout) -> returns GraphicsBuffer
+function GetBlendShapeBuffer(BlendShapeBufferLayout layout) -> returns GraphicsBuffer
+function GetBlendShapeBuffer() -> returns GraphicsBuffer
+function GetBlendShapeBufferRange(Int32 blendShapeIndex) -> returns BlendShapeBufferRange
+function GetTriangles(Int32 submesh) -> returns Int32[]
+function GetTriangles(Int32 submesh, Boolean applyBaseVertex) -> returns Int32[]
+function GetTriangles(Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Int32[]
+function GetTriangles(List`1 triangles, Int32 submesh) -> returns Void
+function GetTriangles(List`1 triangles, Int32 submesh, Boolean applyBaseVertex) -> returns Void
+function GetTriangles(List`1 triangles, Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Void
+function GetTriangles(List`1 triangles, Int32 submesh, Boolean applyBaseVertex) -> returns Void
+function GetTriangles(List`1 triangles, Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Void
+function GetIndices(Int32 submesh) -> returns Int32[]
+function GetIndices(Int32 submesh, Boolean applyBaseVertex) -> returns Int32[]
+function GetIndices(Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Int32[]
+function GetIndices(List`1 indices, Int32 submesh) -> returns Void
+function GetIndices(List`1 indices, Int32 submesh, Boolean applyBaseVertex) -> returns Void
+function GetIndices(List`1 indices, Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Void
+function GetIndices(List`1 indices, Int32 submesh, Boolean applyBaseVertex) -> returns Void
+function GetIndices(List`1 indices, Int32 submesh, Int32 meshLod, Boolean applyBaseVertex) -> returns Void
+function SetIndexBufferData(NativeArray`1 data, Int32 dataStart, Int32 meshBufferStart, Int32 count, MeshUpdateFlags flags) -> returns Void
+function SetIndexBufferData(T[] data, Int32 dataStart, Int32 meshBufferStart, Int32 count, MeshUpdateFlags flags) -> returns Void
+function SetIndexBufferData(List`1 data, Int32 dataStart, Int32 meshBufferStart, Int32 count, MeshUpdateFlags flags) -> returns Void
+function GetIndexStart(Int32 submesh) -> returns UInt32
+function GetIndexStart(Int32 submesh, Int32 meshLod) -> returns UInt32
+function GetIndexCount(Int32 submesh) -> returns UInt32
+function GetIndexCount(Int32 submesh, Int32 meshLod) -> returns UInt32
+function GetBaseVertex(Int32 submesh) -> returns UInt32
+function SetTriangles(Int32[] triangles, Int32 submesh) -> returns Void
+function SetTriangles(Int32[] triangles, Int32 submesh, Boolean calculateBounds) -> returns Void
+function SetTriangles(Int32[] triangles, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(Int32[] triangles, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(Int32[] triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(Int32[] triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(UInt16[] triangles, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(UInt16[] triangles, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(UInt16[] triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(UInt16[] triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh, Boolean calculateBounds) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetTriangles(List`1 triangles, Int32 trianglesStart, Int32 trianglesLength, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(Int32[] indices, MeshTopology topology, Int32 submesh) -> returns Void
+function SetIndices(Int32[] indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds) -> returns Void
+function SetIndices(Int32[] indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(Int32[] indices, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(Int32[] indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(Int32[] indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(UInt16[] indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(UInt16[] indices, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(UInt16[] indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(UInt16[] indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(NativeArray`1 indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(NativeArray`1 indices, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(NativeArray`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(NativeArray`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetIndices(List`1 indices, Int32 indicesStart, Int32 indicesLength, MeshTopology topology, Int32 submesh, Int32 meshLod, Boolean calculateBounds, Int32 baseVertex) -> returns Void
+function SetSubMeshes(SubMeshDescriptor[] desc, Int32 start, Int32 count, MeshUpdateFlags flags) -> returns Void
+function SetSubMeshes(SubMeshDescriptor[] desc, MeshUpdateFlags flags) -> returns Void
+function SetSubMeshes(List`1 desc, Int32 start, Int32 count, MeshUpdateFlags flags) -> returns Void
+function SetSubMeshes(List`1 desc, MeshUpdateFlags flags) -> returns Void
+function SetSubMeshes(NativeArray`1 desc, Int32 start, Int32 count, MeshUpdateFlags flags) -> returns Void
+function SetSubMeshes(NativeArray`1 desc, MeshUpdateFlags flags) -> returns Void
+function SetLod(Int32 submesh, Int32 level, MeshLodRange levelRange, MeshUpdateFlags flags) -> returns Void
+function SetLods(List`1 levels, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function SetLods(List`1 levels, Int32 start, Int32 count, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function SetLods(MeshLodRange[] levels, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function SetLods(MeshLodRange[] levels, Int32 start, Int32 count, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function SetLods(NativeArray`1 levels, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function SetLods(NativeArray`1 levels, Int32 start, Int32 count, Int32 submesh, MeshUpdateFlags flags) -> returns Void
+function GetLods(Int32 submesh) -> returns MeshLodRange[]
+function GetLods(List`1 levels, Int32 submesh) -> returns Void
+function GetBindposes(List`1 bindposes) -> returns Void
+function GetBoneWeights(List`1 boneWeights) -> returns Void
+function Clear(Boolean keepVertexLayout) -> returns Void
+function Clear() -> returns Void
+function RecalculateBounds() -> returns Void
+function RecalculateNormals() -> returns Void
+function RecalculateTangents() -> returns Void
+function RecalculateBounds(MeshUpdateFlags flags) -> returns Void
+function RecalculateNormals(MeshUpdateFlags flags) -> returns Void
+function RecalculateTangents(MeshUpdateFlags flags) -> returns Void
+function RecalculateUVDistributionMetric(Int32 uvSetIndex, Single uvAreaThreshold) -> returns Void
+function RecalculateUVDistributionMetrics(Single uvAreaThreshold) -> returns Void
+function MarkDynamic() -> returns Void
+function UploadMeshData(Boolean markNoLongerReadable) -> returns Void
+function Optimize() -> returns Void
+function OptimizeIndexBuffers() -> returns Void
+function OptimizeReorderVertexBuffer() -> returns Void
+function GetTopology(Int32 submesh) -> returns MeshTopology
+function CombineMeshes(CombineInstance[] combine, Boolean mergeSubMeshes, Boolean useMatrices, Boolean hasLightmapData) -> returns Void
+function CombineMeshes(CombineInstance[] combine, Boolean mergeSubMeshes, Boolean useMatrices) -> returns Void
+function CombineMeshes(CombineInstance[] combine, Boolean mergeSubMeshes) -> returns Void
+function CombineMeshes(CombineInstance[] combine) -> returns Void
+function GetEntityId() -> returns EntityId
+function GetInstanceID() -> returns Int32
+function GetHashCode() -> returns Int32
+function Equals(Object other) -> returns Boolean
+function ToString() -> returns String
+function GetType() -> returns Type
+
+==================================================
+
+=== CLASS: UnityEngine.Graphics ===
+Module: UnityEngine.CoreModule
+-- PROPERTIES --
+prop ColorGamut activeColorGamut
+prop GraphicsTier activeTier
+prop Boolean preserveFramebufferAlpha
+prop OpenGLESVersion minOpenGLESVersion
+prop RenderBuffer activeColorBuffer
+prop RenderBuffer activeDepthBuffer
+prop String deviceName
+prop String deviceVendor
+prop String deviceVersion
+
+-- METHODS --
+function ClearRandomWriteTargets() -> returns Void
+function ExecuteCommandBuffer(CommandBuffer buffer) -> returns Void
+function ExecuteCommandBufferAsync(CommandBuffer buffer, ComputeQueueType queueType) -> returns Void
+function SetRenderTarget(RenderTexture rt, Int32 mipLevel, CubemapFace face, Int32 depthSlice) -> returns Void
+function SetRenderTarget(GraphicsTexture rt, Int32 mipLevel, CubemapFace face, Int32 depthSlice) -> returns Void
+function SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, Int32 mipLevel, CubemapFace face, Int32 depthSlice) -> returns Void
+function SetRenderTarget(RenderBuffer[] colorBuffers, RenderBuffer depthBuffer) -> returns Void
+function SetRenderTarget(RenderTargetSetup setup) -> returns Void
+function SetRandomWriteTarget(Int32 index, RenderTexture uav) -> returns Void
+function SetRandomWriteTarget(Int32 index, ComputeBuffer uav, Boolean preserveCounterValue) -> returns Void
+function SetRandomWriteTarget(Int32 index, GraphicsBuffer uav, Boolean preserveCounterValue) -> returns Void
+function CopyTexture(Texture src, Texture dst) -> returns Void
+function CopyTexture(Texture src, Int32 srcElement, Texture dst, Int32 dstElement) -> returns Void
+function CopyTexture(Texture src, Int32 srcElement, Int32 srcMip, Texture dst, Int32 dstElement, Int32 dstMip) -> returns Void
+function CopyTexture(Texture src, Int32 srcElement, Int32 srcMip, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, Texture dst, Int32 dstElement, Int32 dstMip, Int32 dstX, Int32 dstY) -> returns Void
+function CopyTexture(GraphicsTexture src, GraphicsTexture dst) -> returns Void
+function CopyTexture(GraphicsTexture src, Int32 srcElement, GraphicsTexture dst, Int32 dstElement) -> returns Void
+function CopyTexture(GraphicsTexture src, Int32 srcElement, Int32 srcMip, GraphicsTexture dst, Int32 dstElement, Int32 dstMip) -> returns Void
+function CopyTexture(GraphicsTexture src, Int32 srcElement, Int32 srcMip, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, GraphicsTexture dst, Int32 dstElement, Int32 dstMip, Int32 dstX, Int32 dstY) -> returns Void
+function ConvertTexture(Texture src, Texture dst) -> returns Boolean
+function ConvertTexture(Texture src, Int32 srcElement, Texture dst, Int32 dstElement) -> returns Boolean
+function ConvertTexture(GraphicsTexture src, GraphicsTexture dst) -> returns Boolean
+function ConvertTexture(GraphicsTexture src, Int32 srcElement, GraphicsTexture dst, Int32 dstElement) -> returns Boolean
+function CreateAsyncGraphicsFence(SynchronisationStage stage) -> returns GraphicsFence
+function CreateAsyncGraphicsFence() -> returns GraphicsFence
+function CreateGraphicsFence(GraphicsFenceType fenceType, SynchronisationStageFlags stage) -> returns GraphicsFence
+function WaitOnAsyncGraphicsFence(GraphicsFence fence) -> returns Void
+function WaitOnAsyncGraphicsFence(GraphicsFence fence, SynchronisationStage stage) -> returns Void
+function CopyBuffer(GraphicsBuffer source, GraphicsBuffer dest) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Color color, Material mat, Int32 pass) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Material mat, Int32 pass) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Material mat, Int32 pass) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Material mat, Int32 pass) -> returns Void
+function RenderMesh(RenderParams& rparams, Mesh mesh, Int32 submeshIndex, Matrix4x4 objectToWorld, Nullable`1 prevObjectToWorld) -> returns Void
+function RenderMeshInstanced(RenderParams& rparams, Mesh mesh, Int32 submeshIndex, T[] instanceData, Int32 instanceCount, Int32 startInstance) -> returns Void
+function RenderMeshInstanced(RenderParams& rparams, Mesh mesh, Int32 submeshIndex, List`1 instanceData, Int32 instanceCount, Int32 startInstance) -> returns Void
+function RenderMeshInstanced(RenderParams rparams, Mesh mesh, Int32 submeshIndex, NativeArray`1 instanceData, Int32 instanceCount, Int32 startInstance) -> returns Void
+function RenderMeshIndirect(RenderParams& rparams, Mesh mesh, GraphicsBuffer argsBuffer, Int32 commandCount, Int32 startCommand) -> returns Void
+function RenderMeshPrimitives(RenderParams& rparams, Mesh mesh, Int32 submeshIndex, Int32 instanceCount) -> returns Void
+function RenderPrimitives(RenderParams& rparams, MeshTopology topology, Int32 vertexCount, Int32 instanceCount) -> returns Void
+function RenderPrimitivesIndexed(RenderParams& rparams, MeshTopology topology, GraphicsBuffer indexBuffer, Int32 indexCount, Int32 startIndex, Int32 instanceCount) -> returns Void
+function RenderPrimitivesIndirect(RenderParams& rparams, MeshTopology topology, GraphicsBuffer argsBuffer, Int32 commandCount, Int32 startCommand) -> returns Void
+function RenderPrimitivesIndexedIndirect(RenderParams& rparams, MeshTopology topology, GraphicsBuffer indexBuffer, GraphicsBuffer commandBuffer, Int32 commandCount, Int32 startCommand) -> returns Void
+function DrawMeshNow(Mesh mesh, Vector3 position, Quaternion rotation, Int32 materialIndex) -> returns Void
+function DrawMeshNow(Mesh mesh, Matrix4x4 matrix, Int32 materialIndex) -> returns Void
+function DrawMeshNow(Mesh mesh, Vector3 position, Quaternion rotation) -> returns Void
+function DrawMeshNow(Mesh mesh, Matrix4x4 matrix) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows, Boolean receiveShadows, Boolean useLightProbes) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor, Boolean useLightProbes) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows, Boolean receiveShadows, Boolean useLightProbes) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawMeshInstancedProcedural(Mesh mesh, Int32 submeshIndex, Material material, Bounds bounds, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawMeshInstancedIndirect(Mesh mesh, Int32 submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, Int32 argsOffset, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawMeshInstancedIndirect(Mesh mesh, Int32 submeshIndex, Material material, Bounds bounds, GraphicsBuffer bufferWithArgs, Int32 argsOffset, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage, LightProbeProxyVolume lightProbeProxyVolume) -> returns Void
+function DrawProceduralNow(MeshTopology topology, Int32 vertexCount, Int32 instanceCount) -> returns Void
+function DrawProceduralNow(MeshTopology topology, GraphicsBuffer indexBuffer, Int32 indexCount, Int32 instanceCount) -> returns Void
+function DrawProceduralIndirectNow(MeshTopology topology, ComputeBuffer bufferWithArgs, Int32 argsOffset) -> returns Void
+function DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer indexBuffer, ComputeBuffer bufferWithArgs, Int32 argsOffset) -> returns Void
+function DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer bufferWithArgs, Int32 argsOffset) -> returns Void
+function DrawProceduralIndirectNow(MeshTopology topology, GraphicsBuffer indexBuffer, GraphicsBuffer bufferWithArgs, Int32 argsOffset) -> returns Void
+function DrawProcedural(Material material, Bounds bounds, MeshTopology topology, Int32 vertexCount, Int32 instanceCount, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawProcedural(Material material, Bounds bounds, MeshTopology topology, GraphicsBuffer indexBuffer, Int32 indexCount, Int32 instanceCount, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawProceduralIndirect(Material material, Bounds bounds, MeshTopology topology, ComputeBuffer bufferWithArgs, Int32 argsOffset, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawProceduralIndirect(Material material, Bounds bounds, MeshTopology topology, GraphicsBuffer bufferWithArgs, Int32 argsOffset, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawProceduralIndirect(Material material, Bounds bounds, MeshTopology topology, GraphicsBuffer indexBuffer, ComputeBuffer bufferWithArgs, Int32 argsOffset, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawProceduralIndirect(Material material, Bounds bounds, MeshTopology topology, GraphicsBuffer indexBuffer, GraphicsBuffer bufferWithArgs, Int32 argsOffset, Camera camera, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function Blit(Texture source, RenderTexture dest) -> returns Void
+function Blit(Texture source, RenderTexture dest, Int32 sourceDepthSlice, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, RenderTexture dest, Vector2 scale, Vector2 offset) -> returns Void
+function Blit(Texture source, RenderTexture dest, Vector2 scale, Vector2 offset, Int32 sourceDepthSlice, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, RenderTexture dest, Material mat, Int32 pass) -> returns Void
+function Blit(Texture source, RenderTexture dest, Material mat, Int32 pass, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, RenderTexture dest, Material mat) -> returns Void
+function Blit(Texture source, Material mat, Int32 pass) -> returns Void
+function Blit(Texture source, Material mat, Int32 pass, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, Material mat) -> returns Void
+function BlitMultiTap(Texture source, RenderTexture dest, Material mat, Vector2[] offsets) -> returns Void
+function BlitMultiTap(Texture source, RenderTexture dest, Material mat, Int32 destDepthSlice, Vector2[] offsets) -> returns Void
+function Blit(Texture source, GraphicsTexture dest) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Int32 sourceDepthSlice, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Vector2 scale, Vector2 offset) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Vector2 scale, Vector2 offset, Int32 sourceDepthSlice, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Material mat, Int32 pass) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Material mat, Int32 pass, Int32 destDepthSlice) -> returns Void
+function Blit(Texture source, GraphicsTexture dest, Material mat) -> returns Void
+function BlitMultiTap(Texture source, GraphicsTexture dest, Material mat, Vector2[] offsets) -> returns Void
+function BlitMultiTap(Texture source, GraphicsTexture dest, Material mat, Int32 destDepthSlice, Vector2[] offsets) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Int32 materialIndex) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Int32 materialIndex) -> returns Void
+function DrawProcedural(MeshTopology topology, Int32 vertexCount, Int32 instanceCount) -> returns Void
+function DrawProceduralIndirect(MeshTopology topology, ComputeBuffer bufferWithArgs, Int32 argsOffset) -> returns Void
+function CreateGPUFence(SynchronisationStage stage) -> returns GPUFence
+function WaitOnGPUFence(GPUFence fence, SynchronisationStage stage) -> returns Void
+function CreateGPUFence() -> returns GPUFence
+function WaitOnGPUFence(GPUFence fence) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows, Boolean receiveShadows) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows) -> returns Void
+function DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, Boolean castShadows, Boolean receiveShadows) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor, Boolean useLightProbes) -> returns Void
+function DrawMesh(Mesh mesh, Matrix4x4 matrix, Material material, Int32 layer, Camera camera, Int32 submeshIndex, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Transform probeAnchor, LightProbeUsage lightProbeUsage) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, Matrix4x4[] matrices, Int32 count, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera) -> returns Void
+function DrawMeshInstanced(Mesh mesh, Int32 submeshIndex, Material material, List`1 matrices, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage) -> returns Void
+function DrawMeshInstancedIndirect(Mesh mesh, Int32 submeshIndex, Material material, Bounds bounds, ComputeBuffer bufferWithArgs, Int32 argsOffset, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage) -> returns Void
+function DrawMeshInstancedIndirect(Mesh mesh, Int32 submeshIndex, Material material, Bounds bounds, GraphicsBuffer bufferWithArgs, Int32 argsOffset, MaterialPropertyBlock properties, ShadowCastingMode castShadows, Boolean receiveShadows, Int32 layer, Camera camera, LightProbeUsage lightProbeUsage) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Color color, Material mat) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Color color) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Material mat) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Rect sourceRect, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder, Material mat) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Int32 leftBorder, Int32 rightBorder, Int32 topBorder, Int32 bottomBorder) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture, Material mat) -> returns Void
+function DrawTexture(Rect screenRect, Texture texture) -> returns Void
+function SetRenderTarget(RenderTexture rt) -> returns Void
+function SetRenderTarget(RenderTexture rt, Int32 mipLevel) -> returns Void
+function SetRenderTarget(RenderTexture rt, Int32 mipLevel, CubemapFace face) -> returns Void
+function SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer) -> returns Void
+function SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, Int32 mipLevel) -> returns Void
+function SetRenderTarget(RenderBuffer colorBuffer, RenderBuffer depthBuffer, Int32 mipLevel, CubemapFace face) -> returns Void
+function SetRandomWriteTarget(Int32 index, ComputeBuffer uav) -> returns Void
+function SetRandomWriteTarget(Int32 index, GraphicsBuffer uav) -> returns Void
+function Equals(Object obj) -> returns Boolean
+function GetHashCode() -> returns Int32
+function GetType() -> returns Type
+function ToString() -> returns String
+
+==================================================
+
