@@ -9,7 +9,7 @@ public class QuasarApiExporter : MonoBehaviour
 {
     void Start()
     {
-        // ПОЛНЫЙ список классов для создания аналога Gaea
+        // ПОЛНЫЙ список классов
         Type[] typesToExport = {
             typeof(ComputeShader),    // ЯДРО: Запуск вычислений на GPU (Dispatch, SetTexture)
             typeof(ComputeBuffer),    // ДАННЫЕ: Передача массивов чисел в шейдер (эрозия)
